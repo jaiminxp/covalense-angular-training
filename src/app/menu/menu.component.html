@@ -1,0 +1,16 @@
+<div class="container">
+  <mat-list>
+    <mat-list-item *ngFor="let dish of dishes">
+      <img
+        src="{{ dish.image }}"
+        alt="{{ dish.name }}"
+        srcset=""
+        matListAvatar
+      />
+      <h2 matLine>{{ dish.name }}</h2>
+      <p matLine>
+        <span>{{ dish.description }}</span>
+      </p>
+    </mat-list-item>
+  </mat-list>
+</div>

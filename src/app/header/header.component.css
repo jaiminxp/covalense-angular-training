@@ -1,0 +1,18 @@
+.hcontainer {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-around;
+}
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  justify-content: space-evenly;
+}
+
+a {
+  color: violet;
+  text-decoration: none;
+}

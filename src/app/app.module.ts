@@ -12,6 +12,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { DishdetailComponent } from './dishdetail/dishdetail.component';
 
+import { DishService } from './services/dish.service';
+
 @NgModule({
   declarations: [AppComponent, MenuComponent, DishdetailComponent],
   imports: [
@@ -24,7 +26,7 @@ import { DishdetailComponent } from './dishdetail/dishdetail.component';
     FlexLayoutModule,
     MatButtonModule,
   ],
-  providers: [],
+  providers: [DishService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

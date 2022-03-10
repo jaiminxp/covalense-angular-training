@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MenuComponent } from './menu/menu.component';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -39,6 +40,7 @@ import { ContactComponent } from './contact/contact.component';
     MatCardModule,
     FlexLayoutModule,
     MatButtonModule,
+    MatListModule,
   ],
   providers: [DishService],
   bootstrap: [AppComponent],

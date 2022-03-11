@@ -1,0 +1,30 @@
+<h1>Template Driven Forms</h1>
+<p>{{ user | json }}</p>
+<form (ngSubmit)="onSubmit()">
+  <p>
+    <input
+      [(ngModel)]="user.username"
+      placeholder="Username"
+      type="text"
+      name="username"
+    />
+  </p>
+  <p>
+    <input
+      [(ngModel)]="user.password"
+      placeholder="Password"
+      type="password"
+      name="password"
+    />
+  </p>
+  <p>
+    <label for="remember">Remember Me</label>
+    <input
+      [(ngModel)]="user.remember"
+      type="checkbox"
+      name="remember"
+      id="remember"
+    />
+  </p>
+  <button type="submit">Login</button>
+</form>

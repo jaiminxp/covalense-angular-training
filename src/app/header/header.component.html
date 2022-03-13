@@ -1,11 +1,46 @@
 <mat-toolbar color="primary">
-  <div class="hcontainer">
-    <h1>My Restaurant</h1>
-    <div class="menu">
-      <a routerLink="/home" href="" mat-button>Home</a>
-      <a routerLink="/menu" href="" mat-button>Menu</a>
-      <a routerLink="/about" href="" mat-button>About</a>
-      <a routerLink="/contact" href="" mat-button>Contact</a>
-    </div>
-  </div>
+  <span><img src="/assets/images/logo.png" height="45" alt="logo" /></span>
+  <a mat-button
+    ><mat-icon aria-hidden="false" aria-label="home icon">home</mat-icon>Home</a
+  >
+  <a mat-button
+    ><mat-icon aria-hidden="false" aria-label="home icon">info</mat-icon>
+    About</a
+  >
+  <a mat-button
+    ><mat-icon aria-hidden="false" aria-label="home icon"
+      >restaurant_menu</mat-icon
+    >
+    Menu</a
+  >
+  <a mat-button
+    ><mat-icon aria-hidden="false" aria-label="home icon"
+      >contact_page</mat-icon
+    >
+    Contact</a
+  >
 </mat-toolbar>
+
+<div
+  class="jumbotron"
+  fxLayout="row"
+  fxLayout.sm="column"
+  fxLayout.xs="column"
+  fxLayoutAlign.xs="start center"
+  fxLayoutAlign.sm="start center"
+  fxLayoutAlign.gt-sm="center center"
+  fxLayoutGap="10px"
+>
+  <div fxFlex fxFlex.gt-sm="50%">
+    <h1>My Restaurant</h1>
+    <p>
+      We take inspiration from the World's best cuisines, and create a unique
+      fusion experience. Our lipsmacking creations will tickle your culinary
+      senses!
+    </p>
+  </div>
+  <div fxFlex fxFlex.gt-sm="20%">
+    <img src="/assets/images/logo.png" alt="Logo" height="200" />
+  </div>
+  <div fxFlex></div>
+</div>

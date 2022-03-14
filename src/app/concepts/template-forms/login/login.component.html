@@ -1,13 +1,18 @@
 <h1>Template Driven Forms</h1>
 <p>{{ user | json }}</p>
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()" novalidate #loginForm="ngForm">
   <p>
     <input
       [(ngModel)]="user.username"
       placeholder="Username"
       type="text"
       name="username"
+      #username="ngModel"
+      required
     />
+    <span class="error" *ngIf="username.errors?.['required']"
+      >Username is required</span
+    >
   </p>
   <p>
     <input
@@ -15,7 +20,12 @@
       placeholder="Password"
       type="password"
       name="password"
+      #password="ngModel"
+      required
     />
+    <span class="error" *ngIf="password.errors?.['required']"
+      >Password is required</span
+    >
   </p>
   <p>
     <label for="remember">Remember Me</label>
@@ -26,5 +36,5 @@
       id="remember"
     />
   </p>
-  <button type="submit">Login</button>
+  <button type="submit" [disabled]="loginForm.form.invalid">Login</button>
 </form>

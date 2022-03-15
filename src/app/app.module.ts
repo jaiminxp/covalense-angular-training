@@ -26,6 +26,7 @@ import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule } from '@angular/forms';
+import { PromotionService } from './services/promotion.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,7 @@ import { FormsModule } from '@angular/forms';
     MatInputModule,
     MatCheckboxModule,
   ],
-  providers: [DishService],
+  providers: [DishService, PromotionService],
   bootstrap: [AppComponent],
   entryComponents: [LoginComponent],
 })

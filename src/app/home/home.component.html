@@ -15,4 +15,18 @@
       <p>{{ dish.description }}</p>
     </mat-card-content>
   </mat-card>
+
+  <mat-card *ngIf="promotion" fxFlex>
+    <mat-card-header>
+      <mat-card-title>{{ promotion.name }}</mat-card-title>
+    </mat-card-header>
+    <img
+      src="{{ promotion.image }}"
+      alt="{{ promotion.name }}"
+      height="400px"
+    />
+    <mat-card-content>
+      <p>{{ promotion.description }}</p>
+    </mat-card-content>
+  </mat-card>
 </div>

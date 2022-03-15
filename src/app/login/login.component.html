@@ -1,7 +1,7 @@
 <mat-toolbar color="primary">
   Login
   <span class="flex-spacer"></span>
-  <button mat-button mat-dialog-close="">x</button></mat-toolbar
+  <button mat-button mat-dialog-close>x</button></mat-toolbar
 >
 
 <p>{{ user | json }}</p>
@@ -19,8 +19,8 @@
           required
         />
       </mat-form-field>
-      <span class="error" *ngIf="username.errors?.['required']"
-        >Username is required</span
+      <mat-error class="error" *ngIf="username.errors?.['required']"
+        >Username is required</mat-error
       >
     </p>
     <p>
@@ -35,19 +35,26 @@
           required
         />
       </mat-form-field>
-      <span class="error" *ngIf="password.errors?.['required']"
-        >Password is required</span
+      <mat-error class="error" *ngIf="password.errors?.['required']"
+        >Password is required</mat-error
       >
     </p>
   </mat-dialog-content>
   <p>
-    <label for="remember">Remember Me</label>
-    <input
-      [(ngModel)]="user.remember"
-      type="checkbox"
-      name="remember"
-      id="remember"
-    />
+    <mat-checkbox [(ngModel)]="user.remember" name="rememberme"
+      >Remember Me</mat-checkbox
+    >
   </p>
-  <button type="submit" [disabled]="loginForm.form.invalid">Login</button>
+  <mat-dialog-actions>
+    <span class="flex-spacer"></span>
+    <button
+      color="primary"
+      mat-button
+      type="submit"
+      [disabled]="loginForm.form.invalid"
+    >
+      Login
+    </button>
+    <button type="button" mat-button mat-dialog-close>Cancel</button>
+  </mat-dialog-actions>
 </form>

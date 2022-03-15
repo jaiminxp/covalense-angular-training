@@ -5,4 +5,14 @@
   fxLayout.xs="column"
   fxLayoutAlign.gt-md="space-around center"
   fxLayoutGap="10px"
-></div>
+>
+  <mat-card *ngIf="dish" fxFlex>
+    <mat-card-header>
+      <mat-card-title>{{ dish.name }}</mat-card-title>
+    </mat-card-header>
+    <img src="{{ dish.image }}" alt="{{ dish.name }}" height="400px" />
+    <mat-card-content>
+      <p>{{ dish.description }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

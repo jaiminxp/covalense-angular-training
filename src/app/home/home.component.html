@@ -29,4 +29,14 @@
       <p>{{ promotion.description }}</p>
     </mat-card-content>
   </mat-card>
+
+  <mat-card *ngIf="leader" fxFlex>
+    <mat-card-header>
+      <mat-card-title>{{ leader.name }}</mat-card-title>
+    </mat-card-header>
+    <img src="{{ leader.image }}" alt="{{ leader.name }}" height="400px" />
+    <mat-card-content>
+      <p>{{ leader.description }}</p>
+    </mat-card-content>
+  </mat-card>
 </div>

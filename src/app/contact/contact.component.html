@@ -29,32 +29,59 @@
   </div>
   <hr />
   <h1>Feedback Form</h1>
-  <form novalidate [formGroup]="feedbackForm">
-    <input
-      formControlName="firstname"
-      type="text"
-      placeholder="First name"
-      name="firstname"
-    />
-    <input
-      formControlName="lastname"
-      type="text"
-      placeholder="Last name"
-      name="lastname"
-    />
-    <input
-      formControlName="telnum"
-      type="tel"
-      placeholder="Telephone Number"
-      name="telnum"
-    />
-    <input
-      formControlName="email"
-      type="email"
-      placeholder="Email"
-      name="email"
-    />
-    <label for="agree">Should we contact you</label>
-    <input id="agree" formControlName="agree" type="checkbox" name="agree" />
+  <p>{{ feedbackForm.value | json }} {{ feedbackForm.status | json }}</p>
+  <form novalidate [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+    <p>
+      <input
+        formControlName="firstname"
+        type="text"
+        placeholder="First name"
+        name="firstname"
+      />
+    </p>
+    <p>
+      <input
+        formControlName="lastname"
+        type="text"
+        placeholder="Last name"
+        name="lastname"
+      />
+    </p>
+    <p>
+      <input
+        formControlName="telnum"
+        type="tel"
+        placeholder="Telephone Number"
+        name="telnum"
+      />
+    </p>
+    <p>
+      <input
+        formControlName="email"
+        type="email"
+        placeholder="Email"
+        name="email"
+      />
+    </p>
+    <p>
+      <label for="agree">Should we contact you</label>
+      <input id="agree" formControlName="agree" type="checkbox" name="agree" />
+    </p>
+    <p>
+      <select title="how?" formControlName="contacttype" name="contacttype">
+        <option *ngFor="let type of contactType" value="{{ type }}" selected>
+          {{ type }}
+        </option>
+      </select>
+    </p>
+    <p>
+      <textarea
+        name="message"
+        formControlName="message"
+        rows="12"
+        placeholder="Your Feedback"
+      ></textarea>
+    </p>
+    <button type="submit">Submit</button>
   </form>
 </div>

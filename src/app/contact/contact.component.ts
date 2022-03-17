@@ -25,4 +25,10 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  onSubmit() {
+    this.feedback = this.feedbackForm.value;
+    console.log('🚀 ~ this.feedback', this.feedback);
+    this.feedbackForm.reset();
+  }
 }

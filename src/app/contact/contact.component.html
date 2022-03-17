@@ -38,6 +38,11 @@
         placeholder="First name"
         name="firstname"
       />
+      <span
+        class="error"
+        *ngIf="feedbackForm.get('firstname')?.hasError('required') && feedbackForm.get('firstname')?.['touched']"
+        >First name is required</span
+      >
     </p>
     <p>
       <input

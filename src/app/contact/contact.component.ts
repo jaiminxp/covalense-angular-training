@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Feedback, ContactType } from '../shared/feedback';
 
@@ -11,6 +11,8 @@ export class ContactComponent implements OnInit {
   feedbackForm: FormGroup;
   feedback: Feedback;
   contactType = ContactType;
+
+  @ViewChild('fform') feedbackFormDirective: any;
 
   constructor(private fb: FormBuilder) {
     this.feedbackForm = this.fb.group({
@@ -30,5 +32,6 @@ export class ContactComponent implements OnInit {
     this.feedback = this.feedbackForm.value;
     console.log('🚀 ~ this.feedback', this.feedback);
     this.feedbackForm.reset();
+    this.feedbackFormDirective.resetForm();
   }
 }

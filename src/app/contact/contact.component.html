@@ -30,7 +30,12 @@
   <hr />
   <h1>Feedback Form</h1>
   <p>{{ feedbackForm.value | json }} {{ feedbackForm.status | json }}</p>
-  <form novalidate [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+  <form
+    #fform="ngForm"
+    novalidate
+    [formGroup]="feedbackForm"
+    (ngSubmit)="onSubmit()"
+  >
     <p>
       <input
         formControlName="firstname"

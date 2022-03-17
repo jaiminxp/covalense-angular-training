@@ -27,4 +27,34 @@
       <h4>Map of our Location</h4>
     </div>
   </div>
+  <hr />
+  <h1>Feedback Form</h1>
+  <form novalidate [formGroup]="feedbackForm">
+    <input
+      formControlName="firstname"
+      type="text"
+      placeholder="First name"
+      name="firstname"
+    />
+    <input
+      formControlName="lastname"
+      type="text"
+      placeholder="Last name"
+      name="lastname"
+    />
+    <input
+      formControlName="telnum"
+      type="tel"
+      placeholder="Telephone Number"
+      name="telnum"
+    />
+    <input
+      formControlName="email"
+      type="email"
+      placeholder="Email"
+      name="email"
+    />
+    <label for="agree">Should we contact you</label>
+    <input id="agree" formControlName="agree" type="checkbox" name="agree" />
+  </form>
 </div>

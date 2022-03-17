@@ -25,7 +25,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
 
@@ -57,6 +57,7 @@ import { LeaderService } from './services/leader.service';
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
+    ReactiveFormsModule,
   ],
   providers: [DishService, PromotionService, LeaderService],
   bootstrap: [AppComponent],

@@ -9,11 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class C1Component implements OnInit {
   count: any = 15;
 
+  isDisabled: boolean = false;
+
+  inputValue: string;
+
   increaseCount() {
     this.count++;
   }
 
+  onType(event: any) {
+    this.inputValue = event.target.value;
+  }
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setTimeout(() => (this.isDisabled = true), 2000);
+  }
 }

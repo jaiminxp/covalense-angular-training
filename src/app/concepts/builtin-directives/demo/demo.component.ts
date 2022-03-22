@@ -8,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 export class DemoComponent implements OnInit {
   comments: number = 0;
 
+  pColor: string = 'blue';
+
+  isDark: boolean = false;
+
+  shoppingList: string[] = ['grocery', 'clothes', 'mobile phone'];
+
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    setInterval(() => {
+      this.pColor = Math.random() > 0.5 ? 'green' : 'blue';
+    }, 1000);
+  }
 }

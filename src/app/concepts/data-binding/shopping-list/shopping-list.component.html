@@ -1,0 +1,9 @@
+<div>
+  <h1>shopping list</h1>
+  <p>this is my shopping list</p>
+  <div *ngFor="let s of shoppingData">
+    <app-list-item [itemData]="s"></app-list-item>
+  </div>
+
+  <app-list-item itemData="i am a shoppping list item"></app-list-item>
+</div>

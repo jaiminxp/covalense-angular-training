@@ -13,6 +13,13 @@ export class C1Component implements OnInit {
 
   inputValue: string;
 
+  isChecked: boolean = false;
+
+  change(event: any) {
+    this.isChecked = event.checked;
+    console.log('🚀 ~ this.isChecked', this.isChecked);
+  }
+
   increaseCount() {
     this.count++;
   }
@@ -25,5 +32,9 @@ export class C1Component implements OnInit {
 
   ngOnInit(): void {
     setTimeout(() => (this.isDisabled = true), 2000);
+
+    setInterval(() => {
+      this.isChecked = this.isChecked ? false : true;
+    }, 1000);
   }
 }

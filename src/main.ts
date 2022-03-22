@@ -13,5 +13,5 @@ if (environment.production) {
 }
 
 platformBrowserDynamic()
-  .bootstrapModule(BuiltinDirectivesModule)
+  .bootstrapModule(DataBindingModule)
   .catch((err) => console.error(err));

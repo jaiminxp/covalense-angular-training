@@ -4,10 +4,18 @@ import { C1Component } from './c1/c1.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { SquarenumComponent } from './squarenum/squarenum.component';
 import { FormsModule } from '@angular/forms';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ShoppingListComponent } from './shopping-list/shopping-list.component';
+import { ListItemComponent } from './list-item/list-item.component';
 
 @NgModule({
-  declarations: [C1Component, SquarenumComponent],
-  imports: [CommonModule, BrowserModule, FormsModule],
-  bootstrap: [C1Component],
+  declarations: [
+    C1Component,
+    SquarenumComponent,
+    ShoppingListComponent,
+    ListItemComponent,
+  ],
+  imports: [CommonModule, BrowserModule, FormsModule, MatSlideToggleModule],
+  bootstrap: [ShoppingListComponent],
 })
 export class DataBindingModule {}

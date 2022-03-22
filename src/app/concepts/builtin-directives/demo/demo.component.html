@@ -1,0 +1,7 @@
+<h1>Your Post</h1>
+<p *ngIf="comments > 0; else elseBlock">Here are your comments</p>
+
+<ng-template #elseBlock>
+  <h1>😔</h1>
+  <p>no comments yet</p>
+</ng-template>

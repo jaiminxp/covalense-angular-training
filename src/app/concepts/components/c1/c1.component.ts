@@ -18,7 +18,13 @@ import { Component, OnInit } from '@angular/core';
   // ],
 })
 export class C1Component implements OnInit {
+  inputValue: string;
   constructor() {}
 
   ngOnInit(): void {}
+
+  onClick(input: HTMLInputElement) {
+    this.inputValue = input.value;
+    // heading.innerText = 'I am a heading';
+  }
 }

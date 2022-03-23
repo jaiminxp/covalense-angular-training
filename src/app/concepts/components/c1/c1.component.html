@@ -1,5 +1,26 @@
-<h1>c1 works!</h1>
+<!-- <h1>c1 works!</h1>
 <ul>
   <li>chicken</li>
   <li>rabbit</li>
-</ul>
+</ul> -->
+
+<!-- <div class="cardContainer">
+  <app-c2>
+    <h1>my favorite dish</h1>
+  </app-c2>
+
+  <app-c2>
+    <ul>
+      <li>lorem</li>
+      <li>lorem</li>
+      <li>lorem</li>
+    </ul>
+  </app-c2>
+</div> -->
+
+<h1 #heading>{{ textInput.value }}</h1>
+<form action="">
+  <label for="text">textinput</label>
+  <input type="text" id="text" #textInput />
+  <button type="button" (click)="onClick(textInput)">SUBMIT</button>
+</form>

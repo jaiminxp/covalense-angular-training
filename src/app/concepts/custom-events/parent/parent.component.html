@@ -1,0 +1,6 @@
+<h1>Shopping list</h1>
+<app-child
+  (deleteEvent)="deleteListItem($event)"
+  *ngFor="let l of shoppingList"
+  [listItem]="l"
+></app-child>

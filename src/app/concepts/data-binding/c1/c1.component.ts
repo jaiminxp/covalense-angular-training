@@ -1,5 +1,5 @@
 // model
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-c1',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./c1.component.css'],
 })
 export class C1Component implements OnInit {
+  @ViewChild('heading') heading: ElementRef;
+
   count: any = 15;
 
   isDisabled: boolean = false;
@@ -35,6 +37,11 @@ export class C1Component implements OnInit {
 
     setInterval(() => {
       this.isChecked = this.isChecked ? false : true;
+    }, 1000);
+
+    setTimeout(() => {
+      console.log('🚀 ~ this.heading', this.heading.nativeElement.style);
+      this.heading.nativeElement.style.color = 'orange';
     }, 1000);
   }
 }

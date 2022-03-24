@@ -16,6 +16,6 @@ import { ListItemComponent } from './list-item/list-item.component';
     ListItemComponent,
   ],
   imports: [CommonModule, BrowserModule, FormsModule, MatSlideToggleModule],
-  bootstrap: [ShoppingListComponent],
+  bootstrap: [C1Component],
 })
 export class DataBindingModule {}

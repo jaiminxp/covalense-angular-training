@@ -8,6 +8,7 @@ import { CustomDirectivesModule } from './app/concepts/custom-directives/custom-
 import { CustomEventsModule } from './app/concepts/custom-events/custom-events.module';
 import { DataBindingModule } from './app/concepts/data-binding/data-binding.module';
 import { LifecycleModule } from './app/concepts/lifecycle/lifecycle.module';
+import { ServicesModule } from './app/concepts/services/services.module';
 import { TemplateFormsModule } from './app/concepts/template-forms/template-forms.module';
 import { environment } from './environments/environment';
 
@@ -16,5 +17,5 @@ if (environment.production) {
 }
 
 platformBrowserDynamic()
-  .bootstrapModule(CustomDirectivesModule)
+  .bootstrapModule(ServicesModule)
   .catch((err) => console.error(err));

@@ -7,6 +7,8 @@ import { LoggerService } from './logger.service';
 export class ShoppingListService {
   list: string[] = ['Chocolate', 'Milk', 'Bread'];
 
+  @Output() addEvent = new EventEmitter<string>();
+
   constructor(public loggerService: LoggerService) {}
 
   getItems(): string[] {
@@ -16,5 +18,7 @@ export class ShoppingListService {
   addItem(item: string) {
     this.list.push(item);
     this.loggerService.logIt(`Item added to list: ${item}`);
+
+    this.addEvent.emit(item);
   }
 }

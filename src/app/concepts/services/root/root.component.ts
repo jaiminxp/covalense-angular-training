@@ -17,6 +17,10 @@ export class RootComponent implements OnInit {
 
   ngOnInit(): void {
     this.listItems = this.shoppingListService.getItems();
+
+    this.shoppingListService.addEvent.subscribe((event: string) => {
+      console.log('🚀 ~ An Item was added', event);
+    });
   }
 
   alertUser(event: string) {

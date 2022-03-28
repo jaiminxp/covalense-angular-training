@@ -1,0 +1,6 @@
+<h2>Twitter Feed</h2>
+
+<div *ngFor="let t of tweets" class="tweet" [routerLink]="['/feed', t.id]">
+  <h3>user: {{ t.user }}</h3>
+  <p>caption: {{ t.caption }}</p>
+</div>

@@ -1,0 +1,7 @@
+.tweet {
+  background-color: cyan;
+}
+
+.tweet:hover {
+  background-color: lemonchiffon;
+}

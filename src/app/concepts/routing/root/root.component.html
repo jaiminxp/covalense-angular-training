@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="toolbarContainer">
+    <a
+      routerLink=""
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Home</a
+    >
+    <a routerLink="/feed" routerLinkActive="active">Feed</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

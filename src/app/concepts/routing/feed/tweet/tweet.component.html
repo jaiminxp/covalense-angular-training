@@ -3,4 +3,10 @@
 <h3>user: {{ tweet.user }}</h3>
 <p>caption: {{ tweet.caption }}</p>
 
+<p>
+  <button (click)="editTweet()" mat-raised-button color="primary">
+    Edit Tweet
+  </button>
+</p>
+
 <a routerLink="/feed/3">View Trending Tweet</a>

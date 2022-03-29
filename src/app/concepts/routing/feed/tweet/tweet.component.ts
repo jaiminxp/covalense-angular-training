@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { TweetService } from '../../services/tweet.service';
 import { Tweet } from '../../shared/tweets';
@@ -15,7 +15,8 @@ export class TweetComponent implements OnInit, OnDestroy {
 
   constructor(
     private tweetService: TweetService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -30,5 +31,11 @@ export class TweetComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.paramsSubscription.unsubscribe();
+  }
+
+  editTweet() {
+    this.router.navigate(['feed', this.tweet.id, 'edit'], {
+      queryParamsHandling: 'preserve',
+    });
   }
 }

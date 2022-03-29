@@ -1,0 +1,27 @@
+<h1 *ngIf="!isAllowedToEdit; else elseBlock">
+  You're not allowed to edit this tweet
+</h1>
+<ng-template #elseBlock>
+  <h1>Edit this tweet</h1>
+  <form action="">
+    <p>user: {{ tweet.user }}</p>
+    <p>
+      <textarea
+        placeholder="caption"
+        rows="10"
+        name="caption"
+        [(ngModel)]="tweet.caption"
+      ></textarea>
+    </p>
+    <p>
+      <button
+        type="button"
+        (click)="onUpdateTweet()"
+        mat-raised-button
+        color="primary"
+      >
+        Update Tweet
+      </button>
+    </p>
+  </form>
+</ng-template>

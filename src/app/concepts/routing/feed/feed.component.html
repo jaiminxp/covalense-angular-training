@@ -1,6 +1,16 @@
+<div class="child">
+  <router-outlet></router-outlet>
+</div>
+
+<hr />
+
 <h2>Twitter Feed</h2>
 
-<div *ngFor="let t of tweets" class="tweet" [routerLink]="['/feed', t.id]">
-  <h3>user: {{ t.user }}</h3>
-  <p>caption: {{ t.caption }}</p>
+<div *ngFor="let t of tweets" class="tweet">
+  <div>
+    <h3>Tweet by: {{ t.user }}</h3>
+    <button (click)="goToTweet(t.id)" mat-raised-button color="primary">
+      Read Tweet
+    </button>
+  </div>
 </div>

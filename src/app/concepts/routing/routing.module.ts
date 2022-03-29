@@ -10,6 +10,9 @@ import { RouterModule } from '@angular/router';
 import { routes } from './routes';
 import { TweetService } from './services/tweet.service';
 import { TweetComponent } from './feed/tweet/tweet.component';
+import { EditTweetComponent } from './feed/tweet/edit-tweet/edit-tweet.component';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -18,12 +21,15 @@ import { TweetComponent } from './feed/tweet/tweet.component';
     AboutComponent,
     RootComponent,
     TweetComponent,
+    EditTweetComponent,
   ],
   imports: [
     CommonModule,
     BrowserModule,
     MatToolbarModule,
     RouterModule.forRoot(routes),
+    FormsModule,
+    MatButtonModule,
   ],
   providers: [TweetService],
   bootstrap: [RootComponent],

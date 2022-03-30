@@ -33,6 +33,7 @@ import { ErrorComponent } from './error/error.component';
     CommonModule,
     BrowserModule,
     MatToolbarModule,
+    // RouterModule.forRoot(routes, { useHash: true }),
     RouterModule.forRoot(routes),
     FormsModule,
     MatButtonModule,

@@ -15,6 +15,7 @@ import { Tweet } from '../../../shared/tweets';
 export class EditTweetComponent implements OnInit {
   tweet: Tweet = { id: -1, user: '', caption: '' };
   isAllowedToEdit: boolean = false;
+  isChangesSaved: boolean = false;
 
   constructor(
     private tweetService: TweetService,
@@ -36,5 +37,14 @@ export class EditTweetComponent implements OnInit {
   onUpdateTweet() {
     this.tweetService.updateTweet(this.tweet);
     this.router.navigate(['../'], { relativeTo: this.route });
+    this.isChangesSaved = true;
+  }
+
+  canDeactivate() {
+    if (!this.isChangesSaved) {
+      alert('changes are not saved');
+      return false;
+    }
+    return true;
   }
 }

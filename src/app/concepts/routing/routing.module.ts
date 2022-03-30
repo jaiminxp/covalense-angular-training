@@ -16,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthService } from './services/auth.service';
 import { AuthGuardService } from './services/auth-guard.service';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AuthGuardService } from './services/auth-guard.service';
     TweetComponent,
     EditTweetComponent,
     NotFoundComponent,
+    ErrorComponent,
   ],
   imports: [
     CommonModule,

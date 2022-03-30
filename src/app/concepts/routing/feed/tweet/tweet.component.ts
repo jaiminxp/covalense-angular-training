@@ -20,13 +20,16 @@ export class TweetComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    let id = +this.route.snapshot.params['id'];
-    this.tweet = this.tweetService.getTweetById(id);
-
-    this.paramsSubscription = this.route.params.subscribe((params: Params) => {
-      let id = +params['id'];
-      this.tweet = this.tweetService.getTweetById(id);
+    this.route.data.subscribe((data) => {
+      this.tweet = data['tweet'];
     });
+
+    // let id = +this.route.snapshot.params['id'];
+    // this.tweet = this.tweetService.getTweetById(id);
+    // this.paramsSubscription = this.route.params.subscribe((params: Params) => {
+    //   let id = +params['id'];
+    //   this.tweet = this.tweetService.getTweetById(id);
+    // });
   }
 
   ngOnDestroy(): void {

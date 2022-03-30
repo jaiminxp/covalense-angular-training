@@ -8,6 +8,13 @@
     >
     <a routerLink="/feed" routerLinkActive="active">Feed</a>
     <a routerLink="/about" routerLinkActive="active">About</a>
+
+    <button mat-raised-button *ngIf="!isLoggedIn" (click)="onLogin()">
+      Login
+    </button>
+    <button mat-raised-button *ngIf="isLoggedIn" (click)="onLogout()">
+      Logout
+    </button>
   </mat-toolbar-row>
 </mat-toolbar>
 

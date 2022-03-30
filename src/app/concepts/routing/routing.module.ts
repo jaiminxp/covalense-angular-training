@@ -13,6 +13,9 @@ import { TweetComponent } from './feed/tweet/tweet.component';
 import { EditTweetComponent } from './feed/tweet/edit-tweet/edit-tweet.component';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthService } from './services/auth.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -22,6 +25,7 @@ import { MatButtonModule } from '@angular/material/button';
     RootComponent,
     TweetComponent,
     EditTweetComponent,
+    NotFoundComponent,
   ],
   imports: [
     CommonModule,
@@ -31,7 +35,7 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     MatButtonModule,
   ],
-  providers: [TweetService],
+  providers: [TweetService, AuthService, AuthGuardService],
   bootstrap: [RootComponent],
 })
 export class RoutingModule {}

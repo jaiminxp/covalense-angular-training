@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="toolbarContainer">
+    <a
+      routerLink="/home"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Home</a
+    >
+    <a routerLink="/about" routerLinkActive="active">About</a>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div>
+  <h1 *ngIf="isActivated">Activated</h1>
+</div>
+
+<router-outlet></router-outlet>

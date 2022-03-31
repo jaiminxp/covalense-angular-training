@@ -2,7 +2,7 @@ import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
-import { RoutingModule } from './app/concepts/routing/routing.module';
+import { ObservablesModule } from './app/concepts/observables/observables.module';
 import { environment } from './environments/environment';
 
 if (environment.production) {
@@ -10,5 +10,5 @@ if (environment.production) {
 }
 
 platformBrowserDynamic()
-  .bootstrapModule(RoutingModule)
+  .bootstrapModule(ObservablesModule)
   .catch((err) => console.error(err));

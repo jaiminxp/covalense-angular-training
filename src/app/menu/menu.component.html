@@ -1,4 +1,4 @@
-<div class="container" fxLayout="column" fxLayoutGap="10px">
+<div class="container" fxLayout="column" fxLayoutGap="10px" *ngIf="dishes">
   <mat-grid-list cols="2" rowHeight="2:1">
     <mat-grid-tile
       *ngFor="let dish of dishes"
@@ -15,4 +15,9 @@
       </mat-grid-tile-footer>
     </mat-grid-tile>
   </mat-grid-list>
+</div>
+
+<div [hidden]="dishes">
+  <mat-spinner></mat-spinner>
+  <h1>Loading menu...</h1>
 </div>

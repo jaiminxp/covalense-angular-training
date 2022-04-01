@@ -13,11 +13,15 @@ export class DishService {
     return of(DISHES).pipe(delay(2000));
   }
 
-  getDish(id: string): Dish {
-    return DISHES.filter((dish) => id === dish.id)[0];
+  getDish(id: string): Observable<Dish> {
+    return of(DISHES.filter((dish) => id === dish.id)[0]);
   }
 
   getFeaturedDish(): Dish {
     return DISHES.filter((dish) => dish.featured === true)[0];
+  }
+
+  getDishIds(): Observable<string[]> {
+    return of(DISHES.map((dish) => dish.id));
   }
 }

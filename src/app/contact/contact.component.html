@@ -43,11 +43,9 @@
         placeholder="First name"
         name="firstname"
       />
-      <span
-        class="error"
-        *ngIf="feedbackForm.get('firstname')?.hasError('required') && feedbackForm.get('firstname')?.['touched']"
-        >First name is required</span
-      >
+      <span class="error" *ngIf="formErrors.firstname">{{
+        formErrors.firstname
+      }}</span>
     </p>
     <p>
       <input
@@ -56,6 +54,9 @@
         placeholder="Last name"
         name="lastname"
       />
+      <span class="error" *ngIf="formErrors.lastname">{{
+        formErrors.lastname
+      }}</span>
     </p>
     <p>
       <input
@@ -63,7 +64,11 @@
         type="tel"
         placeholder="Telephone Number"
         name="telnum"
+        pattern="[0-9]*"
       />
+      <span class="error" *ngIf="formErrors.telnum">{{
+        formErrors.telnum
+      }}</span>
     </p>
     <p>
       <input
@@ -72,6 +77,7 @@
         placeholder="Email"
         name="email"
       />
+      <span class="error" *ngIf="formErrors.email">{{ formErrors.email }}</span>
     </p>
     <p>
       <label for="agree">Should we contact you</label>

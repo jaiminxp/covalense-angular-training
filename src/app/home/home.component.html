@@ -10,11 +10,20 @@
     <mat-card-header>
       <mat-card-title>{{ dish.name }}</mat-card-title>
     </mat-card-header>
-    <img src="{{ dish.image }}" alt="{{ dish.name }}" height="400px" />
+    <img
+      src="{{ BaseURL + dish.image }}"
+      alt="{{ dish.name }}"
+      height="400px"
+    />
     <mat-card-content>
       <p>{{ dish.description }}</p>
     </mat-card-content>
   </mat-card>
+
+  <div [hidden]="dish">
+    <mat-spinner></mat-spinner>
+    <h4>Loading featured dish...</h4>
+  </div>
 
   <mat-card *ngIf="promotion" fxFlex>
     <mat-card-header>

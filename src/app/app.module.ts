@@ -29,6 +29,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
+import { baseurl } from './shared/baseurl';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -60,8 +62,14 @@ import { LeaderService } from './services/leader.service';
     MatCheckboxModule,
     ReactiveFormsModule,
     MatProgressSpinnerModule,
+    HttpClientModule,
   ],
-  providers: [DishService, PromotionService, LeaderService],
+  providers: [
+    DishService,
+    PromotionService,
+    LeaderService,
+    { provide: 'BaseURL', useValue: baseurl },
+  ],
   bootstrap: [AppComponent],
   entryComponents: [LoginComponent],
 })

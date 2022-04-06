@@ -14,7 +14,11 @@
       <mat-card-header>
         <mat-card-title>{{ dish.name | uppercase }}</mat-card-title>
       </mat-card-header>
-      <img mat-card-image src="{{ dish.image }}" alt="{{ dish.name }}" />
+      <img
+        mat-card-image
+        src="{{ BaseURL + dish.image }}"
+        alt="{{ dish.name }}"
+      />
       <mat-card-content>
         <p>{{ dish.description }}</p>
       </mat-card-content>
@@ -40,4 +44,9 @@
       </mat-list-item>
     </mat-list>
   </div>
+</div>
+
+<div [hidden]="dish">
+  <mat-spinner></mat-spinner>
+  <h1>Loading dish...</h1>
 </div>

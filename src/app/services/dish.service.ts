@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
+import { baseurl } from '../shared/baseurl';
 import { Dish } from '../shared/Dish';
 import { DISHES } from '../shared/dishes';
 
@@ -7,18 +10,20 @@ import { DISHES } from '../shared/dishes';
   providedIn: 'root',
 })
 export class DishService {
-  constructor() {}
+  constructor(private httpClient: HttpClient) {}
 
   getDishes(): Observable<Dish[]> {
-    return of(DISHES).pipe(delay(2000));
+    return this.httpClient.get<Dish[]>(baseurl + 'dishes');
   }
 
   getDish(id: string): Observable<Dish> {
-    return of(DISHES.filter((dish) => id === dish.id)[0]);
+    return this.httpClient.get<Dish>(baseurl + 'dishes/' + id);
   }
 
-  getFeaturedDish(): Dish {
-    return DISHES.filter((dish) => dish.featured === true)[0];
+  getFeaturedDish(): Observable<Dish> {
+    return this.httpClient
+      .get<Dish[]>(baseurl + 'dishes?featured=true')
+      .pipe(map((dishes) => dishes[0]));
   }
 
   getDishIds(): Observable<string[]> {

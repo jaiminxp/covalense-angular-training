@@ -9,7 +9,7 @@ import { DishService } from '../services/dish.service';
 })
 export class MenuComponent implements OnInit {
   dishes: Dish[];
-
+  errMsg: string;
   selectedDish: Dish;
 
   constructor(
@@ -20,8 +20,13 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     // this.dishes = this.dishService.getDishes();
 
-    this.dishService.getDishes().subscribe((DISHES) => {
-      this.dishes = DISHES;
+    this.dishService.getDishes().subscribe({
+      next: (DISHES) => {
+        this.dishes = DISHES;
+      },
+      error: (msg) => {
+        this.errMsg = msg;
+      },
     });
   }
 }

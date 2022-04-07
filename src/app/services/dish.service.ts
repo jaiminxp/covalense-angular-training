@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { delay, Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { baseurl } from '../shared/baseurl';
 import { Dish } from '../shared/Dish';
 import { DISHES } from '../shared/dishes';
@@ -24,7 +24,11 @@ export class DishService {
   }
 
   getDish(id: string): Observable<Dish> {
-    return this.httpClient.get<Dish>(baseurl + 'dishes/' + id);
+    return this.httpClient.get<Dish>(baseurl + 'dishes/' + id).pipe(
+      tap((dish) => {
+        console.log('🚀 ~ dish', dish);
+      })
+    );
   }
 
   getFeaturedDish(): Observable<Dish> {
@@ -36,5 +40,19 @@ export class DishService {
 
   getDishIds(): Observable<string[]> {
     return of(DISHES.map((dish) => dish.id));
+  }
+
+  updateDish(dish: Dish): Observable<Dish> {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+    };
+
+    return this.httpClient.put<Dish>(
+      baseurl + 'dishes/' + dish.id,
+      dish,
+      httpOptions
+    );
   }
 }

@@ -35,6 +35,52 @@
   </div>
 
   <div fxFlex="40">
+    <!-- comment form -->
+    <h2>Add new comment:</h2>
+    <form
+      novalidate
+      #cform="ngForm"
+      class="form-container"
+      [formGroup]="commentForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input
+          formControlName="author"
+          matInput
+          name="author"
+          placeholder="Your name"
+        />
+      </mat-form-field>
+      <p>
+        <mat-label>Rating</mat-label>
+        <mat-slider
+          formControlName="rating"
+          thumbLabel
+          min="1"
+          max="5"
+          step="1"
+          value="3"
+        ></mat-slider>
+      </p>
+      <mat-form-field>
+        <mat-label>Comment</mat-label>
+        <textarea
+          formControlName="comment"
+          matInput
+          name="comment"
+          rows="10"
+          cols="25"
+          placeholder="Your comment"
+        ></textarea>
+      </mat-form-field>
+      <p>
+        <button mat-raised-button color="primary">Add</button>
+      </p>
+    </form>
+
+    <!-- comments -->
     <h1>Comments</h1>
     <mat-list>
       <mat-list-item *ngFor="let cmt of dish.comments">

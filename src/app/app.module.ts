@@ -31,7 +31,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
 import { baseurl } from './shared/baseurl';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HeaderInterceptorService } from './services/header-interceptor.service';
+import { LoggingInterceptorService } from './services/logging-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,16 @@ import { HttpClientModule } from '@angular/common/http';
     PromotionService,
     LeaderService,
     { provide: 'BaseURL', useValue: baseurl },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HeaderInterceptorService,
+      multi: true,
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoggingInterceptorService,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
   entryComponents: [LoginComponent],

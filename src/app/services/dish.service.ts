@@ -43,16 +43,6 @@ export class DishService {
   }
 
   updateDish(dish: Dish): Observable<Dish> {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-      }),
-    };
-
-    return this.httpClient.put<Dish>(
-      baseurl + 'dishes/' + dish.id,
-      dish,
-      httpOptions
-    );
+    return this.httpClient.put<Dish>(baseurl + 'dishes/' + dish.id, dish);
   }
 }

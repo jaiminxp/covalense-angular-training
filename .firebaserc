@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "restaurant-angular-app-87e25": {
+      "hosting": {
+        "covalense-angular": [
+          "restaurant-angular-app-87e25"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "restaurant-angular-app-87e25"
+  }
+}

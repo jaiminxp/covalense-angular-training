@@ -1,0 +1,13 @@
+.toolbar {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.active {
+  background-color: blue;
+}

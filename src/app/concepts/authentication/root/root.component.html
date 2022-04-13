@@ -17,7 +17,12 @@
       >Dishes 🔐</a
     >
   </div>
-  <button mat-raised-button color="secondary" (click)="onLogout()">
+  <button
+    *ngIf="isAuthenticated"
+    mat-raised-button
+    color="secondary"
+    (click)="onLogout()"
+  >
     Logout
   </button>
 </mat-toolbar>

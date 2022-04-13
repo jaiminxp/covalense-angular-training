@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { DishesComponent } from './dishes/dishes.component';
 import { ProcessHTTPMsgService } from 'src/app/shared/process-httpmsg.service';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [HomeComponent, RootComponent, AuthComponent, DishesComponent],
@@ -32,6 +33,7 @@ import { ProcessHTTPMsgService } from 'src/app/shared/process-httpmsg.service';
     MatInputModule,
     HttpClientModule,
     MatProgressSpinnerModule,
+    MatListModule,
   ],
   bootstrap: [RootComponent],
   providers: [ProcessHTTPMsgService],

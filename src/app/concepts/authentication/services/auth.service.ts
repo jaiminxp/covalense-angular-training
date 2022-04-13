@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { ProcessHTTPMsgService } from 'src/app/shared/process-httpmsg.service';
 import { User } from 'src/app/shared/user.model';
@@ -9,7 +9,7 @@ import { User } from 'src/app/shared/user.model';
   providedIn: 'root',
 })
 export class AuthService {
-  user = new Subject<User>();
+  user = new BehaviorSubject<User>(null);
   constructor(
     private httpClient: HttpClient,
     private processHTTPMsgService: ProcessHTTPMsgService

@@ -1,0 +1,8 @@
+<div class="movie-container">
+  <div class="movie" *ngFor="let movie of movies">
+    <h2>{{ movie.name | uppercase | shorten: 15 }}</h2>
+    <h4>{{ movie.genre }}</h4>
+    <p>{{ movie.date | date: "fullDate" | uppercase }}</p>
+    <hr />
+  </div>
+</div>

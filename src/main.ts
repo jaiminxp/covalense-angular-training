@@ -1,7 +1,7 @@
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { PipesModule } from './app/concepts/pipes/pipes.module';
 
-import { AuthenticationModule } from './app/concepts/authentication/authentication.module';
 import { environment } from './environments/environment';
 
 if (environment.production) {
@@ -9,5 +9,5 @@ if (environment.production) {
 }
 
 platformBrowserDynamic()
-  .bootstrapModule(AuthenticationModule)
+  .bootstrapModule(PipesModule)
   .catch((err) => console.error(err));

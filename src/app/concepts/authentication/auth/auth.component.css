@@ -4,3 +4,10 @@
   align-items: center;
   margin-top: 2em;
 }
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}

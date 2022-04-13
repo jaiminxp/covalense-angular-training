@@ -1,6 +1,13 @@
 <div class="auth-container">
   <h1>Authentication</h1>
-  <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+  <div *ngIf="errMsg" class="error">
+    <p>{{ errMsg }}</p>
+  </div>
+  <div class="loader" *ngIf="isLoading">
+    <mat-spinner></mat-spinner>
+    <h3>Loading...</h3>
+  </div>
+  <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" [hidden]="isLoading">
     <p>
       <mat-form-field>
         <mat-label>Email</mat-label>

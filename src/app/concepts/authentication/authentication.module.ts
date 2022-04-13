@@ -15,9 +15,12 @@ import {
 } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { DishesComponent } from './dishes/dishes.component';
+import { ProcessHTTPMsgService } from 'src/app/shared/process-httpmsg.service';
 
 @NgModule({
-  declarations: [HomeComponent, RootComponent, AuthComponent],
+  declarations: [HomeComponent, RootComponent, AuthComponent, DishesComponent],
   imports: [
     CommonModule,
     BrowserModule,
@@ -28,7 +31,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatFormFieldModule,
     MatInputModule,
     HttpClientModule,
+    MatProgressSpinnerModule,
   ],
   bootstrap: [RootComponent],
+  providers: [ProcessHTTPMsgService],
 })
 export class AuthenticationModule {}

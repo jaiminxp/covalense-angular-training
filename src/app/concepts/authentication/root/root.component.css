@@ -3,6 +3,13 @@
   justify-content: space-evenly;
 }
 
+.nav {
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 1;
+  max-width: 35%;
+}
+
 a {
   color: white;
   text-decoration: none;

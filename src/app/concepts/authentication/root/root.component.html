@@ -2,8 +2,24 @@
   <h1>Dishes app</h1>
 
   <div class="nav">
-    <a mat-button routerLink="/auth" routerLinkActive="active">Auth</a>
+    <a
+      mat-button
+      routerLink="/auth"
+      routerLinkActive="active"
+      *ngIf="!isAuthenticated"
+      >Auth</a
+    >
+    <a
+      mat-button
+      routerLink="/dishes"
+      routerLinkActive="active"
+      *ngIf="isAuthenticated"
+      >Dishes 🔐</a
+    >
   </div>
+  <button mat-raised-button color="secondary" (click)="onLogout()">
+    Logout
+  </button>
 </mat-toolbar>
 
 <router-outlet></router-outlet>

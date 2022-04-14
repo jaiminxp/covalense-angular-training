@@ -6,6 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./root.component.css'],
 })
 export class RootComponent implements OnInit {
+  ratingAvg = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log('4.5');
+
+      return resolve(4.5);
+    }, 2000);
+  });
+
   searchString: string;
 
   movies: any = [

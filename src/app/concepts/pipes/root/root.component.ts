@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./root.component.css'],
 })
 export class RootComponent implements OnInit {
+  searchString: string;
+
   movies: any = [
     {
       name: 'RRR',
@@ -37,4 +39,16 @@ export class RootComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  onSearch() {
+    console.log(this.searchString);
+  }
+
+  onAddMovie() {
+    this.movies.push({
+      name: 'SUPERMAN',
+      genre: 'movie',
+      date: new Date(),
+    });
+  }
 }

@@ -1,5 +1,19 @@
 <div class="movie-container">
-  <div class="movie" *ngFor="let movie of movies">
+  <h1>Movies</h1>
+  <form>
+    <input
+      name="search"
+      [(ngModel)]="searchString"
+      type="text"
+      placeholder="Search movies"
+    />
+    <button type="button" (click)="onSearch()">Search</button>
+    <p>
+      <button (click)="onAddMovie()">Add movie</button>
+    </p>
+  </form>
+
+  <div class="movie" *ngFor="let movie of movies | filter: searchString">
     <h2>{{ movie.name | uppercase | shorten: 15 }}</h2>
     <h4>{{ movie.genre }}</h4>
     <p>{{ movie.date | date: "fullDate" | uppercase }}</p>

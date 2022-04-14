@@ -1,3 +1,11 @@
 .movie-container {
   margin: 20px;
 }
+
+.movie {
+  background-color: lightgoldenrodyellow;
+}
+
+form {
+  margin-bottom: 20px;
+}
